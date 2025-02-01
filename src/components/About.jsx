@@ -1,30 +1,64 @@
+// components/About.jsx
 import React from 'react';
-import lawyerPhoto from '../assets/lawyer.png';
 
+const About = () => {
+  const qualifications = [
+    'Especialista em Direito Administrativo',
+    'Mestre em Governança Pública',
+    'Atuou no Ministério Público do Paraná',
+    'Formado em prática de Tribunal do Júri',
+    'Diretor Disciplinar da UFPR (2023-2025)'
+  ];
 
-const About = () => (
-  <section className="about">
-    <div className="about-content">
+  return (
+    <section id="about" className="py-16 bg-white" aria-labelledby="about-heading">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <h2 id="about-heading" className="section-heading">
+          Sobre o Profissional
+        </h2>
+        
+        <div className="grid md:grid-cols-[250px_1fr] gap-8 items-start">
+          <img
+            src="/lawyer.jpg"
+            alt="Jean Carlos de Oliveira"
+            className="w-60 h-60 rounded-full object-cover shadow-lg"
+            loading="lazy"
+          />
 
-    <img src={lawyerPhoto} alt="Jean Carlos de Oliveira" className="profile-photo" />
-      
-      <h2>Sobre o Profissional</h2>
+          <div className="space-y-4 text-gray-600">
+            <p className="text-lg leading-relaxed">
+              <span className="font-semibold text-primary-blue">Jean Carlos de Oliveira</span> 
+              (OAB/PR 99/394) é advogado, graduado em Direito pela Universidade Federal do Paraná.
+            </p>
 
-      <p>Jean Carlos de Oliveira (OAB/PR 99/394) é advogado, graduado em Direito pela Universidade Federal do Paraná.</p>
-      <p>Jean Carlos de Oliveira (OAB/PR 99/394) é advogado, graduado em Direito pela Universidade Federal do Paraná.
- 
- Especialista em Direito Administrativo e Mestre em Governança Pública, Planejamento e Desenvolvimento pela Universidade Tecnológica Federal do Paraná
-  
- Atuou anteriormente junto ao Ministério Público do Paraná, na 2ª Promotoria de Justiça Criminal, eminentemente em casos de tráfico e corrupção.
-  
- Formado em prática de Tribunal do Júri pelo Centro Europeu.
-  
- Foi secretário, chefe da Seção de Comissões Disciplinares e Diretor Disciplinar Substituto da Diretoria Disciplinar da Universidade Federal do Paraná. Atuou como Chefe de Execução Orçamentária do Gabinete do Reitor da Universidade Federal do Paraná. Instrutor de Curso de Procedimentos Administrativos Disciplinares na UFPR.
-  
- Diretor Disciplinar da Universidade Federal do Paraná de 2023 a 2025.</p>
-      <a href="https://lattes.cnpq.br/9170213078805571" className="lattes-link">Currículo Lattes</a>
-    </div>
-  </section>
-);
+            
+            
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {qualifications.map((item, index) => (
+                <li 
+                  key={index}
+                  className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg"
+                >
+                  <svg 
+                    className="flex-shrink-0 w-5 h-5 text-primary-brown mt-1" 
+                    fill="currentColor" 
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default About;

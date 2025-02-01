@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './styles/microinteractions.css';
+
+/* Outros estilos globais */
+@layer components {
+  .btn-primary {
+    @apply bg-primary-blue text-white px-6 py-3 rounded-lg font-medium 
+           transition-all hover:bg-blue-900 focus:ring-2 focus:ring-blue-500 
+           focus:ring-offset-2;
+  }
+
+  .section-heading {
+    @apply text-3xl font-bold text-primary-brown mb-8 
+           after:content-[''] after:block after:w-16 after:h-1 
+           after:bg-primary-blue after:mt-2;
+  }
+}
+
+:root {
+  --transition-duration: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-duration: 0.01s;
+  }
+}
