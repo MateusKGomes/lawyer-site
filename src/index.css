@@ -1,33 +1,336 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import './styles/microinteractions.css';
-
-/* Outros estilos globais */
-@layer components {
-  .btn-primary {
-    @apply bg-primary-blue text-white px-6 py-3 rounded-lg font-medium 
-           transition-all hover:bg-blue-900 focus:ring-2 focus:ring-blue-500 
-           focus:ring-offset-2;
-  }
-
-  .section-heading {
-    @apply text-3xl font-bold text-primary-brown mb-8 
-           after:content-[''] after:block after:w-16 after:h-1 
-           after:bg-primary-blue after:mt-2;
-  }
-}
-
+/* ===== Variáveis CSS ===== */
 :root {
-  --transition-duration: 0.3s;
+  /* Cores */
+  --primary-blue: #1a365d;
+  --primary-brown: #6b4e3d;
+  --neutral-100: #ffffff;
+  --neutral-200: #f8f9fa;
+  --neutral-300: #e9ecef;
+  --neutral-700: #495057;
+  --neutral-900: #212529;
+
+  /* Espaçamentos */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+
+  /* Tipografia */
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
+
+  /* Transições */
+  --transition-fast: 0.2s ease;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --transition-duration: 0.01s;
+    --primary-blue: #2b6cb0;
+    --primary-brown: #9c7c65;
+    --neutral-100: #1a202c;
+    --neutral-200: #2d3748;
+    --neutral-300: #4a5568;
+    --neutral-700: #cbd5e0;
+    --neutral-900: #f7fafc;
+  }
+}
+
+/* ===== Reset e Estilos Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--neutral-900);
+  background-color: var(--neutral-100);
+  transition: background-color var(--transition-fast);
+}
+
+/* ===== Estilos de Componentes ===== */
+/* Seção Sobre */
+.about-section {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--neutral-200);
+  border-bottom: 2px solid var(--primary-brown);
+}
+
+.about-content {
+  display: grid;
+  gap: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  color: var(--primary-brown);
+}
+
+.profile-photo {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* Seção Contato */
+.contact-section {
+  padding: var(--spacing-lg) 0;
+  background: linear-gradient(45deg, var(--primary-blue), var(--primary-brown));
+  color: var(--neutral-100);
+}
+
+.contact-grid {
+  display: grid;
+  gap: var(--spacing-md);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.contact-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  transition: transform var(--transition-fast);
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Seção Áreas de Atuação */
+.practice-section {
+  padding: var(--spacing-lg) 0;
+}
+
+.practice-grid {
+  display: grid;
+  gap: var(--spacing-sm);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 33 var(--spacing-sm);
+}
+
+.practice-card {
+  padding: var(--spacing-md);
+  background-color: var(--neutral-100);
+  border-left: 4px solid var(--primary-blue);
+  border-radius: 4px;
+  box-shadow: var(--shadow-sm);
+  color: white;
+}
+
+/* WhatsApp Button */
+/* Botão do WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: var(--spacing-md);
+  right: var(--spacing-md);
+  background: #25d366;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de pulsação */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.whatsapp-button:hover .whatsapp-icon {
+  animation: pulse 1.5s infinite;
+}
+
+.whatsapp-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.course-section {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--neutral-100);
+  border-top: 2px solid var(--primary-brown);
+  border-bottom: 2px solid var(--primary-brown);
+}
+
+.course-content {
+  display: grid;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.course-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+}
+
+.course-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform var(--transition-fast);
+}
+
+.course-image:hover {
+  transform: scale(1.03);
+}
+
+.course-info {
+  padding: var(--spacing-sm);
+}
+
+.course-details {
+  margin-top: var(--spacing-md);
+}
+
+.course-description {
+  color: var(--neutral-700);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Ajustes de Ícone */
+.icon {
+  margin-right: var(--spacing-xs);
+  color: var(--primary-blue);
+  vertical-align: middle;
+}
+
+/* Tipografia */
+.section-heading {
+  font-size: var(--text-2xl);
+  color: var(--primary-brown);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  padding-bottom: var(--spacing-xs);
+}
+
+.section-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-blue);
+}
+
+/* Links e Botões */
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--primary-blue);
+  color: var(--neutral-100);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.cta-link:hover {
+  opacity: 0.9;
+}
+
+/* Layout Responsivo */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+/* Utilidades */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-balance {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .about-content {
+    grid-template-columns: 300px 1fr;
+    align-items: start;
+  }
+  .text-balance {
+    max-width: 90%;
+  }
+  .whatsapp-button {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+  }
+
+  .whatsapp-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (min-width: 640px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .practice-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }

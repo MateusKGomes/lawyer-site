@@ -1,11 +1,10 @@
 
 import React from 'react';
 
-
 const About = () => (
-  <section className="about">
+  <section className="header">
     <div className="about-content">
-      <h2>Jean Carlos de Oliveira</h2>  
+      <h2>Advogado em Curitiba</h2>    
 
     </div>
   </section>

@@ -52,7 +52,7 @@ body {
   right: 20px;
   background: #25D366;
   padding: 15px;
-  border-radius: 50%;
+  border-radius: 80%;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   z-index: 1000;
 }
@@ -82,7 +82,11 @@ body {
     width: 30px;
     height: 30px;
   }
+  .course-content {
+    grid-template-columns: 1fr 1.5fr;
+  }
 }
+
 
 /* Utility Classes */
 h1, h2, h3 {

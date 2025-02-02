@@ -1,22 +1,24 @@
-// App.js corrigido
-import React from 'react';
 import About from './components/About';
 import Contact from './components/Contact';
 import PracticeAreas from './components/PracticeAreas';
 import UsefulLinks from './components/UsefulLinks';
 import WhatsAppButton from './components/WhatsAppButton';
-import './App.css';
+import Header from './components/Header'
+import PostgraduateCourse from './components/PostgraduateCourse';
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-grow">
+    <div className="min-h-screen bg-white">
+      <main className="space-y-12 pb-12">
+        <Header />
         <About />
         <PracticeAreas />
+        <PostgraduateCourse /> 
         <Contact />
         <UsefulLinks />
+        <WhatsAppButton />
+
       </main>
-      <WhatsAppButton />
     </div>
   );
 }
