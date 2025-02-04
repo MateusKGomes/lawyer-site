@@ -27,14 +27,14 @@ const About = () => {
 
           <div className="text-balance">
             <p className="text-lg">
-              Jean Carlos de Oliveira (OAB/PR 99/394) é advogado com ampla experiência em Direito Administrativo e Processo Disciplinar.
+              Jean Carlos de Oliveira (OAB/PR 99/394).
             </p>
 
             <div className="practice-grid">
               {qualifications.map((item, index) => (
                 <div key={index} className="practice-card">
                   <span className="icon">{item.icon}</span>
-                  <p>{item.text}</p>
+                  <p>{item.text}</p>  
                 </div>
               ))}
             </div>

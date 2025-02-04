@@ -1,5 +1,13 @@
 import React from 'react';
-import { FaBalanceScale, FaHandshake, FaUsers, FaGavel, FaRainbow } from 'react-icons/fa';
+import {
+  FaBalanceScale,
+  FaHandshake,
+  FaUsers,
+  FaGavel,
+  FaRainbow,
+} from 'react-icons/fa';
+
+import { FaHandcuffs } from "react-icons/fa6";
 
 
 const PracticeAreas = () => {
@@ -8,7 +16,9 @@ const PracticeAreas = () => {
     { icon: <FaHandshake />, title: 'Contratos' },
     { icon: <FaUsers />, title: 'Direito de Família' },
     { icon: <FaGavel />, title: 'Tribunal do Júri' },
-    { icon: <FaRainbow />, title: 'Direitos LGBTQIA+'}
+    { icon: <FaRainbow />, title: 'Direitos LGBTQIAPN+'},
+    { icon:  <FaHandcuffs />, title: 'Direito Criminal'},
+    
     // Adicione outras áreas
   ];
 

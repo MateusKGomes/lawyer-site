@@ -34,7 +34,7 @@ const UsefulLinks = () => {
   ];
 
   return (
-    <section className="section bg-neutral-200" aria-labelledby="links-heading">
+    <section className aria-labelledby="links-heading">
       <div className="container">
         <h2 id="links-heading" className="section-heading">
           Links Úteis
