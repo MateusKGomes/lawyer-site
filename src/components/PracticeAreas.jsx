@@ -9,7 +9,6 @@ import {
 import { RiFileListLine } from "react-icons/ri";
 import { MdOutlinePolicy } from "react-icons/md";
 import { HiOutlineBriefcase } from "react-icons/hi";
-
 import { FaHandcuffs } from "react-icons/fa6";
 
 const PracticeAreas = () => {
