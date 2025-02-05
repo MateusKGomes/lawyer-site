@@ -75,7 +75,7 @@ body {
 .footer {
   display: flex;
   justify-content: center;
-  color: var(--neutral-300);
+  color: var(--primary-brown);
 }
 
 .profile-photo {
@@ -123,8 +123,8 @@ body {
 .practice-grid {
   display: grid;
   gap: var(--spacing-sm);
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 9 auto;
   padding: 3 var(--spacing-sm);
 }
 

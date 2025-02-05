@@ -4,7 +4,10 @@ import lawyerPhoto from "../assets/lawyer.png";
 
 const About = () => {
   const qualifications = [
-    { icon: <FaGraduationCap />, text: "Graduado em Direito - UFPR" },
+    {
+      icon: <FaGraduationCap />,
+      text: "Formado em prática de Tribunal do Júri pelo Centro Europeu.",
+    },
     {
       icon: <FaBalanceScale />,
       text: "Especialista em Direito Administrativo",
@@ -12,10 +15,11 @@ const About = () => {
     // Adicione mais qualificações
   ];
 
+  // No App.js ou componente Layout
+
   return (
     <section className="about-section" aria-labelledby="about-heading">
       <div className="container">
-        
         <div className="about-content">
           <img
             src={lawyerPhoto}
@@ -24,17 +28,17 @@ const About = () => {
             loading="lazy"
           />
 
-
           <div className="text-balance">
             <p className="text-lg">
-              Jean Carlos de Oliveira (OAB/PR 99/394).
+              Jean Carlos de Oliveira (OAB/PR 99/394) é advogado, graduado em
+              Direito pela Universidade Federal do Paraná.
             </p>
 
             <div className="practice-grid">
               {qualifications.map((item, index) => (
                 <div key={index} className="practice-card">
                   <span className="icon">{item.icon}</span>
-                  <p>{item.text}</p>  
+                  <p>{item.text}</p>
                 </div>
               ))}
             </div>

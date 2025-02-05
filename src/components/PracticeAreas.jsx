@@ -1,24 +1,42 @@
-import React from 'react';
+import React from "react";
 import {
   FaBalanceScale,
   FaHandshake,
   FaUsers,
   FaGavel,
   FaRainbow,
-} from 'react-icons/fa';
+} from "react-icons/fa";
+import { RiFileListLine } from "react-icons/ri";
+import { MdOutlinePolicy } from "react-icons/md";
+import { HiOutlineBriefcase } from "react-icons/hi";
 
 import { FaHandcuffs } from "react-icons/fa6";
 
-
 const PracticeAreas = () => {
   const areas = [
-    { icon: <FaBalanceScale />, title: 'Especialista em Direito Administrativo' },
-    { icon: <FaHandshake />, title: 'Contratos' },
-    { icon: <FaUsers />, title: 'Direito de Família' },
-    { icon: <FaGavel />, title: 'Tribunal do Júri' },
-    { icon: <FaRainbow />, title: 'Direitos LGBTQIAPN+'},
-    { icon:  <FaHandcuffs />, title: 'Direito Criminal'},
-    
+    {
+      icon: <FaBalanceScale />, title: "Administrativo",
+    },
+
+    { icon: <FaHandshake />, title: "Contratos" },
+
+    { icon: <FaHandcuffs />, title: "Criminal" },
+
+    { icon: <FaRainbow />, title: "Direitos LGBTQIAPN+" },
+
+    { icon: <HiOutlineBriefcase />, title: "Empresarial" },
+
+    { icon: <FaUsers />, title: "Família" },
+
+    { icon: <RiFileListLine />, title: "Inventários" },
+
+    { icon: <FaGavel />, title: "Júri" },
+
+    {
+      icon: <MdOutlinePolicy />,
+      title: "Processo Administrativo Disciplinar (PAD)",
+    },
+
     // Adicione outras áreas
   ];
 
@@ -28,7 +46,7 @@ const PracticeAreas = () => {
         <h2 id="practice-heading" className="section-heading">
           Áreas de Atuação
         </h2>
-        
+
         <div className="practice-grid">
           {areas.map((area, index) => (
             <div key={index} className="practice-card">
