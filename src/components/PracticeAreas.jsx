@@ -5,11 +5,11 @@ import {
   FaUsers,
   FaGavel,
   FaRainbow,
+  FaLock
 } from "react-icons/fa";
 import { RiFileListLine } from "react-icons/ri";
 import { MdOutlinePolicy } from "react-icons/md";
 import { HiOutlineBriefcase } from "react-icons/hi";
-import { FaHandcuffs } from "react-icons/fa6";
 
 const PracticeAreas = () => {
   const areas = [
@@ -19,7 +19,7 @@ const PracticeAreas = () => {
 
     { icon: <FaHandshake />, title: "Contratos" },
 
-    { icon: <FaHandcuffs />, title: "Criminal" },
+    { icon: <FaLock />, title: "Criminal" },
 
     { icon: <FaRainbow />, title: "Direitos LGBTQIAPN+" },
 
