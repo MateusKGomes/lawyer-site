@@ -29,7 +29,7 @@
   --transition-fast: 0.2s ease;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme) {
   :root {
     --primary-blue: #2b6cb0;
     --primary-brown: #9c7c65;
