@@ -6,7 +6,6 @@ import WhatsAppButton from './components/WhatsAppButton';
 import Footer from './components/Footer';
 import PostgraduateCourse from './components/PostgraduateCourse';
 import SEO from './components/SEO';
-
 function App() {
   return (
     <div className="min-h-screen bg-white">
