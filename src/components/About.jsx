@@ -12,10 +12,7 @@ const About = () => {
       icon: <FaBalanceScale />,
       text: "Especialista em Direito Administrativo",
     },
-    // Adicione mais qualificações
   ];
-
-  // No App.js ou componente Layout
 
   return (
     <section className="about-section" aria-labelledby="about-heading">
