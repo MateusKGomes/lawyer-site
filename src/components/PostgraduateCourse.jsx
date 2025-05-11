@@ -1,5 +1,8 @@
 import React from 'react';
-import posGradacao from '../assets/course.jpeg';
+import posGraduacao from '../assets/course.jpeg';
+import PAD from '../assets/PAD.jpeg';
+
+
 
 const PostgraduateCourse = () => (
   <section className="course-section" aria-labelledby="course-heading">
@@ -13,13 +16,30 @@ const PostgraduateCourse = () => (
           aria-label="Ver certificação do curso"
         >
           <img
-            src={posGradacao}
+            src={posGraduacao}
             alt="Certificado de Pós-Graduação"
             className="course-image"
             loading="lazy"
           />
         </a>
       </div>
+      <div className="course-content">
+        <a
+          href="https://esa.oab.org.br/home/course/5165-curso-de-processo-administrativo-disciplinar/867"
+          className="course-image-container-1"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Ver certificação do curso"
+        >
+          <img
+            src={PAD}
+            alt="Processo administrativo Disciplinar"
+            className="course-image"
+            loading="lazy"
+          />
+        </a>
+      </div>
+      
     </div>
   </section>
 );

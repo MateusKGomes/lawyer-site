@@ -213,6 +213,17 @@ body {
   aspect-ratio: 4/3;
   object-fit: cover;
   transition: transform var(--transition-fast);
+  height: auto; /* Mantém a proporção original */
+  object-fit: contain; /* Garante que a imagem inteira seja visível (sem cortes) */
+  display: block; /* Remove espaços indesejados abaixo da image
+}
+
+.course-image-container-1 {
+  display: block;
+  width: 100%; /* Ocupa a largura disponível */
+  height: auto; /* Altura ajustável conforme a proporção */
+  overflow: hidden; /* Opcional: esconde partes que ultrapassem o container */
+  border-radius: 8px; /* Opcional: bordas arredondadas */
 }
 
 .course-image:hover {
